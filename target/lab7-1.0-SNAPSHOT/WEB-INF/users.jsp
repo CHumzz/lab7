@@ -38,7 +38,7 @@
                                     <td>
                                         <a href="">Edit</a>
                                         
-                                        <a href="user?action=delete&email=${user.email}">Delete</a>
+                                        <a href="user?action=delete&email=${user.email.replace("+", "%2B")}">Delete</a>
                                     </td>
                                 </tr>
                             </c:forEach>
