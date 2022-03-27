@@ -31,8 +31,8 @@ public class UserService {
     public boolean delete(String email) throws Exception {
         User user = this.get(email);
         
-       // User user = new User();
-       // user.setEmail(email);
+        //User user = new User();
+        //user.setEmail(email);
         return this.userDB.delete(user);
     }
 }

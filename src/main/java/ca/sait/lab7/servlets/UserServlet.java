@@ -1,7 +1,10 @@
 package ca.sait.lab7.servlets;
 
 import ca.sait.lab7.models.User;
+import ca.sait.lab7.models.Role;
+import ca.sait.lab7.dataaccess.UserDB;
 import ca.sait.lab7.services.UserService;
+import ca.sait.lab7.services.RoleService;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
@@ -11,9 +14,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 /**
  *
- * @author Valued Customer
+ * @author Cole
  */
 public class UserServlet extends HttpServlet {
     /**
@@ -30,6 +35,7 @@ public class UserServlet extends HttpServlet {
         UserService service = new UserService();
         
         String action = request.getParameter("action");  
+        
         if (action != null && action.equals("delete")) {
             try {
                 String email = request.getParameter("email");
