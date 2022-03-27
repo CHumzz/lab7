@@ -1,9 +1,9 @@
 package ca.sait.lab7.dataaccess;
 
-
-import ca.sait.lab7.models.User;
 import ca.sait.lab7.models.Role;
+import ca.sait.lab7.models.User;
 import java.util.List;
+import javax.persistence.EntityManager;
 import javax.persistence.*;
 
 public class UserDB {
@@ -17,7 +17,8 @@ public class UserDB {
         } finally {
             em.close();
         }
-       
+        
+        
     }
 
     public User get(String email) throws Exception {
@@ -36,15 +37,14 @@ public class UserDB {
         EntityTransaction trans = em.getTransaction();
         
         try {
+            
             trans.begin();
             em.persist(user);
             em.merge(user);
             trans.commit();
-            
             return true;
         } catch (Exception ex) {
             trans.rollback();
-            
             return false;
         } finally {
             em.close();
@@ -59,24 +59,23 @@ public class UserDB {
             trans.begin();
             em.merge(user);
             trans.commit();
-            
             return true;
         } catch (Exception ex) {
             trans.rollback();
-            
             return false;
         } finally {
             em.close();
         }
     }
-    
- public boolean delete(User user) throws Exception {
+
+    public boolean delete(User user) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         
         try {
-            trans.begin();          
-            em.remove(em.merge(user));          
+
+            trans.begin();
+            em.remove(em.merge(user));
             trans.commit();
             return true;
         } catch (Exception ex) {
