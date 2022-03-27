@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1>Nick's User Management System</h1>
+                    <h1>Cole's User Management System</h1>
                     
                     <table class="table">
                         <thead>
@@ -37,12 +37,18 @@
                                     <td>${user.active ? "Y" : "N"}</td>
                                     <td>
                                         <a href="">Edit</a>
-                                        <a href="">Delete</a>
+                                        
+                                        <a href="user?action=delete&email=${user.email}">Delete</a>
                                     </td>
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </div>

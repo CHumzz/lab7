@@ -15,7 +15,7 @@ import java.util.*;
 })
 public class Role implements Serializable {
     @Id
-    @Basic
+    @Basic(optional = false)
     @Column(name = "role_id")
     private int id;
     

@@ -68,20 +68,18 @@ public class UserDB {
             em.close();
         }
     }
-
-    public boolean delete(User user) throws Exception {
+    
+ public boolean delete(User user) throws Exception {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         
         try {
-            trans.begin();
-            em.remove(em.merge(user));
+            trans.begin();          
+            em.remove(em.merge(user));          
             trans.commit();
-            
             return true;
         } catch (Exception ex) {
             trans.rollback();
-            
             return false;
         } finally {
             em.close();

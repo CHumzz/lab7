@@ -1,8 +1,8 @@
 package ca.sait.lab7.services;
 
 import ca.sait.lab7.dataaccess.UserDB;
-import ca.sait.lab6.models.Role;
-import ca.sait.lab6.models.User;
+import ca.sait.lab7.models.Role;
+import ca.sait.lab7.models.User;
 import java.util.List;
 
 public class UserService {
@@ -29,8 +29,10 @@ public class UserService {
     }
     
     public boolean delete(String email) throws Exception {
-        User user = new User();
-        user.setEmail(email);
+        User user = this.get(email);
+        
+       // User user = new User();
+       // user.setEmail(email);
         return this.userDB.delete(user);
     }
 }
