@@ -11,7 +11,6 @@
 
     </head>
     <body>
-        <--<!-- THIS IS ME MAKING A SAVEPOINT IN MY GIT FOR CURRENT PROJECT STATUS -->
         
         <div class="container">
             <div class="row">
@@ -45,7 +44,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            
         
                     
             <div class="float-right">
@@ -56,7 +55,7 @@
                         <table>
                         &nbsp;
                         <label for="email">Email: &nbsp;</label>
-                        <input type="text" name="email" id="email" value="<c:out value='$user.email}'/>" >
+                        <input type="text" name="email" id="email" value="<c:out value="${user.email}"/>">
                         &nbsp;
                         <label for="first">First Name: &nbsp;</label>
                         <input type="text" name="first" id="first">
@@ -120,6 +119,7 @@
         </div>
             
             
+        </div>
         </div>
       
     </body>
