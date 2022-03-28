@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -68,5 +69,56 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        RoleService r_service = new RoleService();
+        UserService u_service = new UserService();
+        // action must be one of: create, update, delete
+        String action = request.getParameter("action");
+      
+        try {
+            List<User> users = u_service.getAll();
+            
+            request.setAttribute("users", users); 
+        } catch (Exception ex) {
+            Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            List<Role> roles = r_service.getAll();
+            
+            request.setAttribute("roles", roles); 
+        } catch (Exception ex) {
+            Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+   
+        if (action != null && action.equals("edit")) {
+            try {
+                String email = request.getParameter("e_email"); 
+                String first = request.getParameter("e_first");
+                String last = request.getParameter("e_last");
+                String password = request.getParameter("e_password");
+                String roleName = request.getParameter("e_role");
+                
+                int roleID = 0;
+                if(roleName.equals("system admin")){
+                    roleID=1;
+                }else if(roleName.equals("regular user")){
+                    roleID=2;
+                }else if(roleName.equals("company admin")){
+                    roleID=3;
+                }
+                
+                u_service.update(email, true, first, last, password, new Role(roleID,roleName));
+                
+                
+            } catch (Exception ex) {
+                Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        
+        this.getServletContext().getRequestDispatcher("/WEB-INF/users.jsp").forward(request, response);
     }
 }
