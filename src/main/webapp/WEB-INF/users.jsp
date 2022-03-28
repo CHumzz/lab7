@@ -83,7 +83,7 @@
             </div>
             
             
-            <div class="float-right">
+                <div class="float-right">
                     <form action="user" method="post">
                         <input type="hidden" name="action" value="add">
                         
@@ -116,10 +116,10 @@
                         
                         </table>
                     </form>
-        </div>
+                </div>
             
             
-        </div>
+            </div>
         </div>
       
     </body>
