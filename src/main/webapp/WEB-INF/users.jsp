@@ -44,45 +44,85 @@
                             </c:forEach>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        
                     
-                    <h2> Edit Users</h2>
+                    
+                    
+        <div class="float-right">
                     <form action="user" method="post">
                         <input type="hidden" name="action" value="edit">
+                        
+                        <h2 > Edit Users</h2>
                         <table>
                         
-                        <label for="e_email">Email</label>
-                        <input type="text" name="e_email" id="e_email">
+                        <label for="e_email">Email: </label>
+                        <input type="text" name="e_email" id="e_email"><br>
                         
-                        <label for="e_first">First Name</label>
-                        <input type="text" name="e_first" id="e_first">
+                        <label for="e_first">First Name: </label>
+                        <input type="text" name="e_first" id="e_first"><br>
                         
-                        <label for="e_last">Last Name</label>
-                        <input type="text" name="e_last" id="e_last">
+                        <label for="e_last">Last Name: </label>
+                        <input type="text" name="e_last" id="e_last"><br>
                         
-                        <label for="e_password">Password</label>
-                        <input type="text" name="e_password" id="e_password">
+                        <label for="e_password">Password: </label>
+                        <input type="text" name="e_password" id="e_password"><br>
                         
-                        <label for="isActiveEdit">Active</label>
-                        <input type ="number" id="isActiveEdit" name ="isActiveEdit" min ="0" max="1">
+                        <label for="isActiveEdit">Active: </label>
+                        <input type ="number" id="isActiveEdit" name ="isActiveEdit" placeholder="0=Active,1=Inactive" style="width: 10em" min ="0" max="1" size="17"><br>
                         
-                        <label for="role">Role</label>
+                        <label for="e_role">Role: </label>
                         <select name="e_role" id="e_role">
-                            <option value="1">System Admin</option>
-                            <option value="2">Regular User</option>
-                            <option value="3">Company Admin</option>
-                        </select>
+                            <option value="system admin">System Admin</option>
+                            <option value="regular user">Regular User</option>
+                            <option value="company admin">Company Admin</option>   
+                        </select><br>
                         
-                        <button type="submit">Edit User</button>
+                        <button type="submit">Confirm User Edits</button>
                         
                         </table>
                     </form>
-                    
-                    
-                    
-                    
-                </div>
-            </div>
         </div>
-        
+            
+            
+            <div class="float-right">
+                    <form action="user" method="post">
+                        <input type="hidden" name="action" value="add">
+                        
+                        <h2 > Add Users</h2>
+                        <table>
+                        
+                        <label for="a_email">Email: </label>
+                        <input type="text" name="a_email" id="a_email"><br>
+                        
+                        <label for="e_first">First Name: </label>
+                        <input type="text" name="a_first" id="a_first"><br>
+                        
+                        <label for="e_last">Last Name: </label>
+                        <input type="text" name="a_last" id="a_last"><br>
+                        
+                        <label for="e_password">Password: </label>
+                        <input type="text" name="a_password" id="a_password"><br>
+                        
+                        <label for="isActiveEdit">Active: </label>
+                        <input type ="number" id="isActiveAdd" name ="isActiveAdd" placeholder="0=Active,1=Inactive" style="width: 10em" min ="0" max="1" size="17"><br>
+                        
+                        <label for="a_role">Role: </label>
+                        <select name="a_role" id="a_role">
+                            <option value="system admin">System Admin</option>
+                            <option value="regular user">Regular User</option>
+                            <option value="company admin">Company Admin</option>   
+                        </select><br>
+                        
+                        <button type="submit">Add User</button>
+                        
+                        </table>
+                    </form>
+        </div>
+            
+            
+        </div>
+      
     </body>
 </html>
