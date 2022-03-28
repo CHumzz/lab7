@@ -36,7 +36,7 @@
                                     <td>${user.lastName}</td>
                                     <td>${user.active ? "Y" : "N"}</td>
                                     <td>
-                                        <a href="user?action=edit">Edit</a>
+                                        <a href="user?action=edit&email=${user.email}">Edit</a>
                                         
                                         <a href="user?action=delete&email=${user.email.replace("+", "%2B")}">Delete</a>
                                     </td>
@@ -48,8 +48,6 @@
             </div>
         
                     
-                    
-                    
             <div class="float-right">
                     <form action="user" method="post">
                         <input type="hidden" name="action" value="edit">
@@ -57,23 +55,23 @@
                         <h2 > Edit Users</h2>
                         <table>
                         &nbsp;
-                        <label for="e_email">Email: &nbsp;</label>
-                        <input type="text" name="e_email" id="e_email">
+                        <label for="email">Email: &nbsp;</label>
+                        <input type="text" name="email" id="email" value="<c:out value='$user.email}'/>" >
                         &nbsp;
-                        <label for="e_first">First Name: &nbsp;</label>
-                        <input type="text" name="e_first" id="e_first">
+                        <label for="first">First Name: &nbsp;</label>
+                        <input type="text" name="first" id="first">
                         &nbsp;
-                        <label for="e_last">Last Name: &nbsp;</label>
-                        <input type="text" name="e_last" id="e_last"><br>
+                        <label for="last">Last Name: &nbsp;</label>
+                        <input type="text" name="last" id="last"><br>
                         &nbsp;
-                        <label for="e_password">Password: &nbsp;</label>
-                        <input type="text" name="e_password" id="e_password">
+                        <label for="password">Password: &nbsp;</label>
+                        <input type="text" name="password" id="password">
                         &nbsp;
                         <label for="isActiveEdit">Active: &nbsp;</label>
                         <input type ="number" id="isActiveEdit" name ="isActiveEdit" placeholder="0=Active,1=Inactive" style="width: 8em" min ="0" max="1">
                         &nbsp;
-                        <label for="e_role">Role: &nbsp;</label>
-                        <select name="e_role" id="e_role">
+                        <label for="role">Role: &nbsp;</label>
+                        <select name="role" id="role">
                             <option value="system admin">System Admin</option>
                             <option value="regular user">Regular User</option>
                             <option value="company admin">Company Admin</option>   

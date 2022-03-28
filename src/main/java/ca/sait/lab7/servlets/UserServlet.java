@@ -79,11 +79,11 @@ public class UserServlet extends HttpServlet {
   
         if (action != null && action.equals("edit")) {
             try {
-                String email = request.getParameter("e_email"); 
-                String first = request.getParameter("e_first");
-                String last = request.getParameter("e_last");
-                String password = request.getParameter("e_password");
-                String roleName = request.getParameter("e_role");
+                String email = request.getParameter("email"); 
+                String first = request.getParameter("first");
+                String last = request.getParameter("last");
+                String password = request.getParameter("password");
+                String roleName = request.getParameter("role");
                 
                 int roleID = 0;
                 if(roleName.equals("system admin")){
