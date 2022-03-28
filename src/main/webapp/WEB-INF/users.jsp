@@ -36,7 +36,7 @@
                                     <td>${user.lastName}</td>
                                     <td>${user.active ? "Y" : "N"}</td>
                                     <td>
-                                        <a href="">Edit</a>
+                                        <a href="user?action=edit">Edit</a>
                                         
                                         <a href="user?action=delete&email=${user.email.replace("+", "%2B")}">Delete</a>
                                     </td>
@@ -50,40 +50,40 @@
                     
                     
                     
-        <div class="float-right">
+            <div class="float-right">
                     <form action="user" method="post">
                         <input type="hidden" name="action" value="edit">
                         
                         <h2 > Edit Users</h2>
                         <table>
-                        
-                        <label for="e_email">Email: </label>
-                        <input type="text" name="e_email" id="e_email"><br>
-                        
-                        <label for="e_first">First Name: </label>
-                        <input type="text" name="e_first" id="e_first"><br>
-                        
-                        <label for="e_last">Last Name: </label>
+                        &nbsp;
+                        <label for="e_email">Email: &nbsp;</label>
+                        <input type="text" name="e_email" id="e_email">
+                        &nbsp;
+                        <label for="e_first">First Name: &nbsp;</label>
+                        <input type="text" name="e_first" id="e_first">
+                        &nbsp;
+                        <label for="e_last">Last Name: &nbsp;</label>
                         <input type="text" name="e_last" id="e_last"><br>
-                        
-                        <label for="e_password">Password: </label>
-                        <input type="text" name="e_password" id="e_password"><br>
-                        
-                        <label for="isActiveEdit">Active: </label>
-                        <input type ="number" id="isActiveEdit" name ="isActiveEdit" placeholder="0=Active,1=Inactive" style="width: 10em" min ="0" max="1" size="17"><br>
-                        
-                        <label for="e_role">Role: </label>
+                        &nbsp;
+                        <label for="e_password">Password: &nbsp;</label>
+                        <input type="text" name="e_password" id="e_password">
+                        &nbsp;
+                        <label for="isActiveEdit">Active: &nbsp;</label>
+                        <input type ="number" id="isActiveEdit" name ="isActiveEdit" placeholder="0=Active,1=Inactive" style="width: 8em" min ="0" max="1">
+                        &nbsp;
+                        <label for="e_role">Role: &nbsp;</label>
                         <select name="e_role" id="e_role">
                             <option value="system admin">System Admin</option>
                             <option value="regular user">Regular User</option>
                             <option value="company admin">Company Admin</option>   
-                        </select><br>
-                        
+                        </select>
+                        &nbsp;&nbsp;
                         <button type="submit">Confirm User Edits</button>
                         
                         </table>
                     </form>
-        </div>
+            </div>
             
             
             <div class="float-right">
@@ -92,29 +92,29 @@
                         
                         <h2 > Add Users</h2>
                         <table>
-                        
-                        <label for="a_email">Email: </label>
-                        <input type="text" name="a_email" id="a_email"><br>
-                        
-                        <label for="e_first">First Name: </label>
-                        <input type="text" name="a_first" id="a_first"><br>
-                        
-                        <label for="e_last">Last Name: </label>
+                        &nbsp;
+                        <label for="a_email">Email: &nbsp;</label>
+                        <input type="text" name="a_email" id="a_email">
+                        &nbsp;
+                        <label for="e_first">First Name: &nbsp; </label>
+                        <input type="text" name="a_first" id="a_first">
+                        &nbsp;
+                        <label for="e_last">Last Name: &nbsp;</label>
                         <input type="text" name="a_last" id="a_last"><br>
-                        
-                        <label for="e_password">Password: </label>
-                        <input type="text" name="a_password" id="a_password"><br>
-                        
-                        <label for="isActiveEdit">Active: </label>
-                        <input type ="number" id="isActiveAdd" name ="isActiveAdd" placeholder="0=Active,1=Inactive" style="width: 10em" min ="0" max="1" size="17"><br>
-                        
-                        <label for="a_role">Role: </label>
+                        &nbsp;
+                        <label for="e_password">Password: &nbsp;</label>
+                        <input type="text" name="a_password" id="a_password">
+                        &nbsp;
+                        <label for="isActiveEdit">Active: &nbsp;</label>
+                        <input type ="number" id="isActiveAdd" name ="isActiveAdd" placeholder="0=Active,1=Inactive" style="width: 8em" min ="0" max="1">
+                        &nbsp;
+                        <label for="a_role">Role: &nbsp;</label>
                         <select name="a_role" id="a_role">
                             <option value="system admin">System Admin</option>
                             <option value="regular user">Regular User</option>
                             <option value="company admin">Company Admin</option>   
-                        </select><br>
-                        
+                        </select>
+                        &nbsp;&nbsp;
                         <button type="submit">Add User</button>
                         
                         </table>
