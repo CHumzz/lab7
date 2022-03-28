@@ -45,6 +45,37 @@
                         </tbody>
                     </table>
                     
+                    <h2> Edit Users</h2>
+                    <form action="user" method="post">
+                        <input type="hidden" name="action" value="edit">
+                        <table>
+                        
+                        <label for="e_email">Email</label>
+                        <input type="text" name="e_email" id="e_email">
+                        
+                        <label for="e_first">First Name</label>
+                        <input type="text" name="e_first" id="e_first">
+                        
+                        <label for="e_last">Last Name</label>
+                        <input type="text" name="e_last" id="e_last">
+                        
+                        <label for="e_password">Password</label>
+                        <input type="text" name="e_password" id="e_password">
+                        
+                        <label for="isActiveEdit">Active</label>
+                        <input type ="number" id="isActiveEdit" name ="isActiveEdit" min ="0" max="1">
+                        
+                        <label for="role">Role</label>
+                        <select name="e_role" id="e_role">
+                            <option value="1">System Admin</option>
+                            <option value="2">Regular User</option>
+                            <option value="3">Company Admin</option>
+                        </select>
+                        
+                        <button type="submit">Edit User</button>
+                        
+                        </table>
+                    </form>
                     
                     
                     

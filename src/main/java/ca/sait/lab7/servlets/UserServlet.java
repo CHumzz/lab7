@@ -109,7 +109,14 @@ public class UserServlet extends HttpServlet {
                     roleID=3;
                 }
                 
-                u_service.update(email, true, first, last, password, new Role(roleID,roleName));
+                boolean status = true;
+                
+                String isActive = request.getParameter("isActiveEdit");
+                if(isActive.equals("1")){
+                    status=false;
+                }
+                
+                u_service.update(email, status, first, last, password, new Role(roleID,roleName));
                 
                 
             } catch (Exception ex) {
